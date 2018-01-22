@@ -1,4 +1,4 @@
-﻿#region Script Settings
+#region Script Settings
 #<ScriptSettings xmlns="http://tempuri.org/ScriptSettings.xsd">
 #  <ScriptPackager>
 #    <process>powershell.exe</process>
@@ -86,9 +86,11 @@ $inputXML = @"
                 <Button x:Name="button_Filter" Content="Filter" HorizontalAlignment="Left" Margin="150,10,0,0" VerticalAlignment="Top" Width="75"/>
                 <Button x:Name="button_Export" Content="Export" HorizontalAlignment="Left" Margin="240,10,0,0" VerticalAlignment="Top" Width="75"/>
                 <CheckBox x:Name="cb_Filterasyoutype" Content="Filter as you type (slower)" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top"/>
-                
+
             </Grid>
         </GroupBox>
+        <TextBlock x:Name="tb_count" HorizontalAlignment="Left" Margin="729,605,0,2" TextWrapping="Wrap" Text="VM Count:"  FontWeight="Bold"/>
+        <TextBlock x:Name="tb_count_value" HorizontalAlignment="Left" Margin="791,605,0,2" TextWrapping="Wrap" Text="Value"  FontWeight="Bold"/>
 
     </Grid>
 </Window>
@@ -243,6 +245,7 @@ function load-azurevmlist
      $global:TotalVMDataout = refresh-vm 
      $UI_listView.ItemsSource = $global:TotalVMDataout
      $UI_tb_Filter.Text = ""
+     $UI_tb_count_value.Text = $global:TotalVMDataout.Count
 }
 
 
@@ -251,6 +254,8 @@ function filter-Results
 
     $filterword = '*'+ $UI_tb_Filter.Text + '*'
     $UI_listView.ItemsSource = @($global:TotalVMDataout| ? { $_ -like $filterword})
+    $UI_tb_count_value.Text = @($global:TotalVMDataout| ? { $_ -like $filterword}).Count
+    
 
 } 
  
