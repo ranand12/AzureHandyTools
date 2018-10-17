@@ -358,10 +358,10 @@ function Populate-NSGRules
                 Name = $rule.Name
                 Priority = $rule.Priority
                 Action = $rule.Action
-                SourceAddressPrefix = $rule.SourceAddressPrefix
-                SourcePortRange = $rule.SourcePortRange
-                DestinationAddressPrefix = $rule.DestinationAddressPrefix
-                DestinationPortRange = $rule.DestinationPortRange
+                SourceAddressPrefix = @($rule.SourceAddressPrefix)[0]
+                SourcePortRange = @($rule.SourcePortRange)[0]
+                DestinationAddressPrefix = @($rule.DestinationAddressPrefix)[0]
+                DestinationPortRange = @($rule.DestinationPortRange)[0]
                 Protocol = $rule.Protocol
                 type = $rule.Type
             }
