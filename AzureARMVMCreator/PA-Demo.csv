@@ -1,3 +1,0 @@
-﻿VMName,Rg,VMSize,PremiumDiskTemplate,AvailabilitySet,Tag,Value,IPAddress,PublisherName,Offer,SKUs,Location,Subnet,VNetName,VNetRG,vmadmin,vmpassword
-A-Demo-WIN1,anandeast,Standard_D2,,avs2,,,10.1.4.16,MicrosoftWindowsDesktop,Windows-10,RS3-Pro,eastus2,vmss,testvnet,testvnetrg,testuseradmin,
-A-Demo-WIN2,anandeast,Standard_D2,,avs2,,,10.1.4.17,MicrosoftWindowsDesktop,Windows-10,RS3-Pro,eastus2,vmss,testvnet,testvnetrg,testuseradmin,
