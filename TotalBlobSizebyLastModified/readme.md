@@ -9,10 +9,14 @@ This will also list the total size of all the blobs which match the criteria - u
 
 Edit the following values alone with the respective fields : 
 
-**$storageAccountName = "NAMEOFSTORAGEACCOUNT"
+$storageAccountName = "NAMEOFSTORAGEACCOUNT"
+
 $storageAccountKey = "STORAGEKEY"
+
 $blobContainerName = "BLOBCONTAINERNAME"
+
 $cutoff = Get-Date '9/1/2016 1:00' #modify date here 
+
 $table = @()**
 
 _**Output**_
